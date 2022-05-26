@@ -9,13 +9,12 @@
       <template slot="extra">
         <a-button-group>
           <a-button @click="begincreatetask" type="primary" icon="form"
-            >新建</a-button
-          >
+            >新建</a-button>
           <a-button icon="dashboard">自动执行</a-button>
           <a-button @click="initTaskList" icon="reload">刷新</a-button>
         </a-button-group>
       </template>
-      <a-divider />
+      <a-divider/>
     </a-page-header>
     <el-table
       :data.sync="dat"

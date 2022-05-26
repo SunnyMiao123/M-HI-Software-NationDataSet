@@ -144,6 +144,7 @@
       </el-card>
     </el-row>
     <a-drawer width="500px" :visible="drawervisible" :closeable="false" @close="()=>this.drawervisible=false">
+      <h2>{{selectedProvince}}</h2>
       
     </a-drawer>
   </div>
@@ -154,6 +155,7 @@ export default {
     this.chartevent = {
       click: (t) => {
         this.drawervisible = true;
+        this.selectedProvince = t.name;
       },
     };
     return {
@@ -166,6 +168,7 @@ export default {
       chartData2: "",
       mapsetting: "",
       daterange: "",
+      selectedProvince:"",
     };
   },
   mounted() {
@@ -173,7 +176,7 @@ export default {
     // this.drawminchart1();
   },
   methods: {
-    changedate(t) {
+    changedate() {
       this.$axios({
         method: "get",
         url: "/pydata/home/getstatics/",
